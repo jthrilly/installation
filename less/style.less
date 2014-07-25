@@ -1,0 +1,159 @@
+ 
+/* ===================================================================
+Import Bootstrap LESS and Site Specific LESS
+=================================================================== */
+ 
+@import '../bower_components/bootstrap/less/bootstrap.less'; /* Compiled in Codekit - referenced here as a Framework */
+@import '../less/variables.less'; /* Your site specific LESS variables - these override BS defaults  */
+
+
+@accent: red;
+
+html, body {
+    height:100%;
+    width:100%;
+    -webkit-font-smoothing: antialiased;
+    font-weight:300;
+    overflow:hidden;
+    text-transform:uppercase !important;
+}
+
+.container {
+	width:100% !important;
+}
+
+.confirm-panel {
+  display:none;
+  position:absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+}
+
+.photo-preview {
+  position:absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+}
+
+canvas {
+  height:400px;
+  margin-top:20px;
+}
+
+#content {
+    min-height: 100%;
+  height: 100%;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+
+}
+
+.countdown-container {
+  position:absolute;
+  top:15%;
+  left:47%;
+  z-index:99;
+  opacity:0;
+}
+.number {
+  font-size:390px;
+  scale:0.1;
+  position:relative;
+  left:-210px;
+  font-weight: 700;
+}
+
+
+.loader {
+  width: 1em;
+  height: 1em;
+  display:inline-block;
+  font-size: 150px;
+  position: relative;
+  margin-bottom: 50px;
+  @media (max-width: 150px * 1.5), (max-height: 150px * 1.5) {
+    font-size: 150px/2;
+  }
+  &:before, &:after {
+    content: "";
+    top: 0;
+    display: block;
+    width: 1em;
+    height: 1em;
+    position: absolute;
+    border-width: 0.5em;
+    border-style: double;
+    border-color: transparent;
+    box-sizing: border-box;
+    border-radius: 1em;
+    -webkit-animation: spin 1s infinite;
+  }
+  &:after {
+    left: 0;
+    border-left-color: rgba(255,255,255,0.5);
+  }
+  &:before {
+    right: 0;
+    border-right-color: rgba(255,255,255,0.5);
+    -webkit-animation-delay: 1s /-4;
+  }
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+
+
+
+.text-container {
+    display:table;
+    table-layout:fixed;
+    height:100%;
+    width:80%;
+    margin:0 auto;
+}
+
+
+video {
+	width:100%;
+}
+
+footer {
+  height: 60px;
+}
+
+.btn-circle {
+  width: 150px;
+  height: 150px;
+  line-height: 150px; /* adjust line height to align vertically*/
+  padding:0;
+  border-radius: 50%;
+  background: @accent;
+}
+
+.green {
+  background:green;
+}
+
+.photo-btn {
+	position:absolute;
+	z-index:99;
+	bottom:150px;
+	left:150px;
+}
+
+.vcenter {
+      display:table-cell;
+      vertical-align:middle;
+      text-align:center;
+      width:100%;
+}
