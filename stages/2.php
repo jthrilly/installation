@@ -1,7 +1,5 @@
-<div class="text-container">
-	<div class="vcenter">
+<div class="container">
 		<img id="test" />
-  	</div>
 </div>
 <script>
 var image = experience.getImage();
