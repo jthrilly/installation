@@ -16,14 +16,14 @@
     </div>
     <div class="row text-center">
       <div class="col-md-12">
-       <h2>Take a different shot?</h2>
+       <h2>Would you like another shot?</h2>
       </div>
     </div>
     <div class="row text-center">
-      <div class="col-md-6 text-right">
+      <div class="col-xs-6 text-right">
         <button class="btn btn-circle btn-lg photo-again">Yes</button>
       </div>
-      <div class="col-md-6 text-left">
+      <div class="col-xs-6 text-left">
         <button class="btn btn-circle btn-lg green photo-continue">No</button>
       </div>
     </div>

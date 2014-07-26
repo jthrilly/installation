@@ -1,6 +1,6 @@
-/* exported Experience */
-/* global video, snapshot,localMediaStream:true,hdConstraints,ctx, canvas */
-/* jshint devel:true */
+/* exported Experience, timedStages */
+/* global video, snapshot,localMediaStream:true,hdConstraints,ctx, canvas, slideTimer */
+/* jshint devel:true,unused:false */
 var Experience = function Experience() {
 
   var experience = {};
@@ -8,9 +8,9 @@ var Experience = function Experience() {
   var $content = $('#content');
   var photoCountdown;
   var image;
-
-  experience.stages = 2;
-  experience.timings = [1,1,1,1,1,1,1,1,1];
+  var timedStages = 17;
+  var timings = [0,0,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20];
+  var quote;
 
   experience.init = function() {
         experience.goToStage(0);
@@ -36,35 +36,48 @@ var Experience = function Experience() {
 
   };
 
+  experience.setUserQuote = function(string) {
+    quote = string;
+  };
+
+  experience.getUserQuote = function() {
+    return quote;
+  };
+
   experience.getImage = function() {
     return image;
   };
 
-  experience.startTimer = function() {
-
-  };
-
-  experience.stopTimer = function() {
-
-  };
-
-  experience.loadData = function(path) {
-    var data = JSON.parse(path);
-    $.extend(experience, data);
+  experience.getSlideTime = function() {
+    var seconds = timings[currentStage]*1000;
+    console.log(seconds+" m/seconds for slide number "+currentStage);
+    return seconds;
   };
 
   experience.goToStage = function(stage) {
     var newStage = stage;
-    $content.transition({ opacity: '0'},700,'easeInSine').promise().done( function(){
+    $content.transition({ opacity: '0'},300,'easeInSine').promise().done( function(){
+      if (typeof slideTimer !== 'undefined') {clearInterval(slideTimer); }
       $content.load( "stages/"+stage+".php", function() {
-        $content.transition({ opacity: '1'},700,'easeInSine');    
+        console.log("loading "+stage+".php");
+        $content.transition({ opacity: '1'},300,'easeInSine');    
       });
     });                    
     currentStage = newStage;
   };
 
   experience.nextStage = function() {
-    experience.goToStage(currentStage+1);
+    console.log("next");
+    if (currentStage <= (timedStages-1)) {
+      console.log("current stage; "+currentStage);
+      var newStage = currentStage +1;
+      console.log("new stage; "+newStage);
+      experience.goToStage(newStage);
+    } else {
+      console.log('cancelling');
+      clearInterval(slideTimer);
+    }
+    
   };
 
   experience.prevStage = function() {

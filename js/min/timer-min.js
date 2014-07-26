@@ -1,0 +1,1 @@
+var seconds=experience.getSlideTime();console.log("Number of seconds for this slide: "+seconds);var slideTimer=setInterval(function(){experience.nextStage()},seconds);

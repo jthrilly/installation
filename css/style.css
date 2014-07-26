@@ -6175,10 +6175,13 @@ body {
   -webkit-font-smoothing: antialiased;
   font-weight: 300;
   overflow: hidden;
-  text-transform: uppercase !important;
 }
 .container {
   width: 100% !important;
+  margin-top: 60px;
+}
+h3.userQuote {
+  text-align: left;
 }
 .confirm-panel {
   display: none;
@@ -6215,11 +6218,22 @@ canvas {
   opacity: 0;
 }
 .number {
-  font-size: 390px;
+  font-size: 490px;
   scale: 0.1;
   position: relative;
   left: -210px;
   font-weight: 700;
+}
+h1.small {
+  font-size: 41px;
+}
+img {
+  max-width: 100%;
+}
+textarea {
+  width: 100%;
+  background: black;
+  height: 300px;
 }
 .loader {
   width: 1em;
@@ -6287,6 +6301,9 @@ footer {
 }
 .green {
   background: green;
+}
+.btn:focus {
+  outline: none;
 }
 .photo-btn {
   position: absolute;
