@@ -40,16 +40,6 @@
         });
 
 
-$(".countdown").knob({
-                'min':0,
-                'max':3,
-                'readOnly':true
-
-                });
-
-
-
-
   var video = document.querySelector("#videoElement");
 
   var canvas = document.querySelector('canvas');

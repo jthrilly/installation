@@ -24,6 +24,17 @@
 </div>
 
 <script>
+
+$('.share-yes').click(function() {
+    experience.sendTweet();
+    experience.nextStage();
+});
+
+$('.share-no').click(function() {
+    experience.sendTweet();
+    experience.nextStage();
+});
+
 var image = experience.getImage();
 var userQuote = experience.getUserQuote();
 $('.userQuote').html(userQuote);

@@ -1,5 +1,5 @@
 /* exported Experience, timedStages */
-/* global video, snapshot,localMediaStream:true,hdConstraints,ctx, canvas, slideTimer */
+/* global video, snapshot,localMediaStream:true,hdConstraints,ctx, canvas, slideTimer, Codebird */
 /* jshint devel:true,unused:false */
 var Experience = function Experience() {
 
@@ -11,6 +11,7 @@ var Experience = function Experience() {
   var timedStages = 17;
   var timings = [0,0,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20];
   var quote;
+  var cb;
 
   experience.init = function() {
         experience.goToStage(0);
@@ -132,7 +133,7 @@ var Experience = function Experience() {
       ctx.drawImage(video, 0, 0);
       // "image/webp" works in Chrome.
       // Other browsers will fall back to image/png.
-      image = canvas.toDataURL('image/webp');
+      image = canvas.toDataURL('image/png');
       console.log(image);
     }
   };
@@ -147,9 +148,88 @@ var Experience = function Experience() {
     clearInterval(photoCountdown);
   };
 
+  experience.initTwitter = function() {
+    cb = new Codebird();
+    cb.setConsumerKey("7xo2EFvYpSWzikksZsF4CRKng", "DVhyzG4eOt4Y1t8nVDtyCgRMt7lX9meYXVYqOFWwu2oz2miwd9");
+
+    // get request token
+    // cb.__call(
+    // "oauth_requestToken",
+    // {oauth_callback: "oob"},
+    // function (reply) {
+    //     // stores it
+    //     cb.setToken(reply.oauth_token, reply.oauth_token_secret);
+
+    //     // gets the authorize screen URL
+    //     cb.__call(
+    //         "oauth_authorize",
+    //         {},
+    //         function (auth_url) {
+    //             window.codebird_auth = window.open(auth_url);
+    //         }
+    //     );
+    // }
+    // );
+
+  };
+
+
+  experience.twitterAuth = function(code) {
+    cb.__call(
+      "oauth_accessToken",
+      {oauth_verifier: code},
+      function (reply) {
+          // store the authenticated token, which may be different from the request token (!)
+          cb.setToken(reply.oauth_token, reply.oauth_token_secret);
+          console.log(reply);
+          // if you need to persist the login after page reload,
+          // consider storing the token in a cookie or HTML5 local storage
+      }
+    );
+  };
+
+  experience.sendTweet = function() {
+      var userImage = experience.getImage();
+      var quote = experience.getUserQuote();
+      var data = userImage.substring( "data:image/png;base64,".length );
+     var image = data;
+
+    cb = new Codebird();
+    cb.setConsumerKey("7xo2EFvYpSWzikksZsF4CRKng", "DVhyzG4eOt4Y1t8nVDtyCgRMt7lX9meYXVYqOFWwu2oz2miwd9");
+
+    var params = {
+        "status": quote,
+        "media[]": image
+    };
+    console.log(image);
+    console.log(quote);
+    console.log(params);
+
+    cb.setToken("2680975027-H7GNoL9Y4wXmluRYTPmnmCthBo3stxXr9Wq7E8h","k4bBjEbVGuYD6IXSh848kckW2WcTV46HBtWcP623jquSw");
+    cb.__call(
+        "statuses_updateWithMedia",
+    params,
+      function (reply) {
+          console.log(reply);
+      }
+    );
+
+  };
+
 
   return experience;
 };
+
+function disableclick(event)
+{
+  if(event.button===2)
+   {
+     alert(status);
+     return false;    
+   }
+}
+
+document.onmousedown=disableclick();
 
 
 

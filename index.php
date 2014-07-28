@@ -11,14 +11,14 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no">
         <link rel="stylesheet" href="css/style.css">
     </head>
-<body>
+<body oncontextmenu="return false">
 
 <div id="content" class="content container">
 </div> <!-- end content -->
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="bower_components/jquery.transit/jquery.transit.js"></script>
-<script src="bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+<script src="bower_components/codebird-js/codebird.js"></script>
 <script src="js/main.min.js"></script>
 <script>
         var experience = new Experience();
