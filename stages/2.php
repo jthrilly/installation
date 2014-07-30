@@ -2,7 +2,6 @@
     <video autoplay="true" id="videoElement">   
     </video>
     <div class="countdown-container">
-      <div class="loader"></div>
       <span class="number"></span>
     </div>
   </div>

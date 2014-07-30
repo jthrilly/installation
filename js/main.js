@@ -63,11 +63,11 @@ var Experience = function Experience() {
 
   experience.goToStage = function(stage) {
     var newStage = stage;
-    $content.transition({ opacity: '0'},300,'easeInSine').promise().done( function(){
+    $content.transition({ opacity: '0'},700,'easeInSine').promise().done( function(){
       if (typeof slideTimer !== 'undefined') {clearInterval(slideTimer); }
       $content.load( "stages/"+stage+".php", function() {
         console.log("loading "+stage+".php");
-        $content.transition({ opacity: '1'},300,'easeInSine');    
+        $content.transition({ opacity: '1'},700,'easeInSine');    
       });
     });                    
     currentStage = newStage;

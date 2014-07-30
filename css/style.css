@@ -6212,21 +6212,24 @@ canvas {
   padding: 0 0 60px;
 }
 .countdown-container {
-  position: absolute;
-  top: 15%;
-  left: 47%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
   z-index: 99;
   opacity: 0;
+  margin-top: -400px;
+  margin-left: -190px;
 }
 .number {
-  font-size: 490px;
+  font-size: 690px;
   scale: 0.1;
-  position: relative;
-  left: -210px;
   font-weight: 700;
 }
 h1.small {
   font-size: 41px;
+}
+button:focus {
+  outline: 0 !important;
 }
 img {
   max-width: 100%;
@@ -6303,7 +6306,10 @@ footer {
 .green {
   background: #45CEFF;
 }
-.btn:focus {
+.btn:focus,
+.btn:hover,
+.btn,
+.btn:active {
   outline: none;
 }
 .photo-btn {
