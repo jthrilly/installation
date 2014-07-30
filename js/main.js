@@ -14,6 +14,7 @@ var Experience = function Experience() {
   var cb;
 
   experience.init = function() {
+        document.getElementById('ambient').play();
         experience.goToStage(0);
         $('.next').click(function() {
             experience.nextStage();
@@ -63,6 +64,7 @@ var Experience = function Experience() {
 
   experience.goToStage = function(stage) {
     var newStage = stage;
+    document.getElementById('transition').play();
     $content.transition({ opacity: '0'},700,'easeInSine').promise().done( function(){
       if (typeof slideTimer !== 'undefined') {clearInterval(slideTimer); }
       $content.load( "stages/"+stage+".php", function() {
@@ -211,7 +213,8 @@ var Experience = function Experience() {
     console.log(quote);
     console.log(params);
 
-    cb.setToken("2680975027-H7GNoL9Y4wXmluRYTPmnmCthBo3stxXr9Wq7E8h","k4bBjEbVGuYD6IXSh848kckW2WcTV46HBtWcP623jquSw");
+    // cb.setToken("2680975027-H7GNoL9Y4wXmluRYTPmnmCthBo3stxXr9Wq7E8h","k4bBjEbVGuYD6IXSh848kckW2WcTV46HBtWcP623jquSw");
+    cb.setToken("1169329087-Tzp8DR4XpAh91wEDJTd5EdVrmoyVDi2ay4riVdc","ZTpHg33lFHsSsv2YiKW3prnnflmEdttfdmxH3mvMMY55H");
     cb.__call(
         "statuses_updateWithMedia",
     params,

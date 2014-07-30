@@ -18,7 +18,7 @@
 <script>
 
 $('.contact-yes').click(function() {
-
+	experience.nextStage();
 });
 
 $('.contact-no').click(function() {

@@ -1,15 +1,19 @@
 <div class="text-container">
-	<div class="row">
+	<div class="row text-center">
 		<h2>Please enter your details below to be signed up to our mailing list.</h2>
 	</div>
 	<div class="row text-center">
-      	<form action="http://thisisunfinished.createsend.com/t/d/s/xjtl/" class="connect-form" id="subForm" method="post">
-      		<br /><br />
-	        <label for="fieldName">Name</label>
-	        <input id="fieldName" name="cm-name" type="text">
-	        <label for="fieldEmail">Email</label>
-	        <input id="fieldEmail" name="cm-xjtl-xjtl" required="" type="email">
-	    	</form>
+          <br /><br />      
+    <form action="http://thisisunfinished.createsend.com/t/d/s/jtdtdu/" method="post" class="connectForm" id="subForm">
+    <p>
+        <label for="fieldName">Name</label><br />
+        <input id="fieldName" name="cm-name" type="text" />
+    </p>
+    <p>
+        <label for="fieldEmail">Email</label><br />
+        <input id="fieldEmail" name="cm-jtdtdu-jtdtdu" type="email" required />
+    </p>
+</form>
 	 </div>
 	 <div class="row text-center">
 	 	<br /><br />

@@ -12,7 +12,12 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
 <body oncontextmenu="return false">
-
+<audio preload id="transition">
+  <source src="audio/transition.wav" type="audio/wav">
+</audio>
+<audio preload loop id="ambient">
+  <source src="audio/ambient.wav" type="audio/wav">
+</audio>
 <div id="content" class="content container">
 </div> <!-- end content -->
 <script src="bower_components/jquery/dist/jquery.min.js"></script>

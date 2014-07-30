@@ -1,0 +1,1 @@
+Object {oauth_token: "1169329087-Tzp8DR4XpAh91wEDJTd5EdVrmoyVDi2ay4riVdc", oauth_token_secret: "ZTpHg33lFHsSsv2YiKW3prnnflmEdttfdmxH3mvMMY55H", user_id: "1169329087", screen_name: "UB_theatre", httpstatus: 200}
