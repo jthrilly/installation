@@ -8,8 +8,8 @@ var Experience = function Experience() {
   var $content = $('#content');
   var photoCountdown;
   var image;
-  var timedStages = 17;
-  var timings = [0,0,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20];
+  var timedStages = 18;
+  var timings = [0,0,0,15,0,15,15,10,15,15,15,15,20,20,10,25,15,15];
   var quote;
   var cb;
 
@@ -35,6 +35,12 @@ var Experience = function Experience() {
     		}
 		});  
 
+  };
+
+  experience.reset = function() {
+    quote = "";
+    image = null;
+    experience.goToStage(0);
   };
 
   experience.setUserQuote = function(string) {
@@ -69,20 +75,20 @@ var Experience = function Experience() {
 
   experience.nextStage = function() {
     console.log("next");
-    if (currentStage <= (timedStages-1)) {
+
       console.log("current stage; "+currentStage);
       var newStage = currentStage +1;
       console.log("new stage; "+newStage);
       experience.goToStage(newStage);
-    } else {
-      console.log('cancelling');
-      clearInterval(slideTimer);
-    }
     
   };
 
   experience.prevStage = function() {
     experience.goToStage(currentStage-1);
+  };
+
+  experience.getCurrentStage = function() {
+    return currentStage;
   };
 
   experience.photoInit = function() {
@@ -190,9 +196,9 @@ var Experience = function Experience() {
 
   experience.sendTweet = function() {
       var userImage = experience.getImage();
-      var quote = experience.getUserQuote();
+      var quote = "#changemymind "+experience.getUserQuote();
       var data = userImage.substring( "data:image/png;base64,".length );
-     var image = data;
+      var image = data;
 
     cb = new Codebird();
     cb.setConsumerKey("7xo2EFvYpSWzikksZsF4CRKng", "DVhyzG4eOt4Y1t8nVDtyCgRMt7lX9meYXVYqOFWwu2oz2miwd9");
@@ -220,16 +226,16 @@ var Experience = function Experience() {
   return experience;
 };
 
-function disableclick(event)
-{
-  if(event.button===2)
-   {
-     alert(status);
-     return false;    
-   }
-}
+// function disableclick(event)
+// {
+//   if(event.button===2)
+//    {
+//      alert(status);
+//      return false;    
+//    }
+// }
 
-document.onmousedown=disableclick();
+// document.onmousedown=disableclick();
 
 
 

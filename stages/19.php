@@ -1,5 +1,5 @@
 <div class="container text-center">
-	<div class="row">
+	<div class="row" style="width:90%;margin:0 auto">
 		<div class="col-xs-4">
 			<img src="" id="userImage"/>
 		</div>
@@ -9,8 +9,8 @@
 	</div>
 	<div class="row text-center">
 		<div class="col-xs-12">
-  			<h1>JOIN THE REVOLUTION</h1>
-  			<h3>POST YOUR TASK AND PICTURE?</h3>
+  			<h1>JOIN THE REVOLUTION!</h1>
+  			<h3>Tweet your image and task now</h3>
   		</div>
   	</div>
   	<div class="row text-center">

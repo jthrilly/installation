@@ -1,20 +1,8 @@
 <div class="text-container">
 	<div class="vcenter">
-  		<h1 class="small">If you could set one task for one person in your life, with the aim of positively affecting the way they perceive or experience the world around them, who would it be for and what would it be?</h1>
-  		<h3>Write your answer here...(140 characters)</h3>
-  		<textarea maxlength="140"></textarea>
-        <button class="btn btn-circle btn-lg green next">Submit</button>
-    </div>	 	
-  	</div>
+  		<h1>In a society that values economic prosperity above all else; where products and people must wear packaged identites in order to engage in commerce; how can we nurture the natural psychological state of constant change?</h1>
+ 	</div>
 </div>
-<script>
-	$('.next').click(function() {
-		experience.setUserQuote($('textarea').val());
-	    experience.nextStage();
-	});
 
-
-
-</script>
-
+<script src="js/timer.js"></script>
 

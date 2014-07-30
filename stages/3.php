@@ -1,6 +1,6 @@
 <div class="text-container">
 	<div class="vcenter">
-  		<h1>Consumerism is a social and economic order and ideology, that encourages the acquisition of goods and services in ever-greater amounts.</h1>
+  		<h1>If you could change one thing about your mind, what would it be?</h1>
  	</div>
 </div>
 
