@@ -6176,6 +6176,9 @@ body {
   font-weight: 300;
   overflow: hidden;
 }
+input {
+  background: black;
+}
 .container {
   width: 100% !important;
   margin-top: 60px;

@@ -3,7 +3,7 @@
       <div class="row">
         <div class="col-md-9">
         <h4>You can write your answer here...(126 characters)</h4>  
-          <textarea maxlength="126" class="text" style="height:220px"></textarea>
+          <textarea maxlength="126" class="text" style="height:200px"></textarea>
         </div>
         <div class="col-md-3 text-center" >
           <button class="btn btn-circle btn-lg next" style="margin-top:100px">Submit</button>
@@ -11,7 +11,7 @@
       </div>
 </div>
 <script>
-$('textarea').click(function() {
+$('textarea, body, text-container').click(function() {
   $('.text').focus();
 });
 
