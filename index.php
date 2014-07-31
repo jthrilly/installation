@@ -13,7 +13,7 @@
     </head>
 <body oncontextmenu="return false">
 <audio preload id="transition">
-  <source src="audio/transition.wav" type="audio/wav">
+  <source src="audio/transition.mp3" type="audio/wav">
 </audio>
 <audio preload loop id="ambient">
   <source src="audio/ambient.wav" type="audio/wav">

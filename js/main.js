@@ -58,7 +58,7 @@ var Experience = function Experience() {
 
   experience.getSlideTime = function() {
     var seconds = timings[currentStage]*1000;
-    console.log(seconds+" m/seconds for slide number "+currentStage);
+    // console.log(seconds+" m/seconds for slide number "+currentStage);
     return seconds;
   };
 
@@ -68,7 +68,7 @@ var Experience = function Experience() {
     $content.transition({ opacity: '0'},700,'easeInSine').promise().done( function(){
       if (typeof slideTimer !== 'undefined') {clearInterval(slideTimer); }
       $content.load( "stages/"+stage+".php", function() {
-        console.log("loading "+stage+".php");
+        // console.log("loading "+stage+".php");
         $content.transition({ opacity: '1'},700,'easeInSine');    
       });
     });                    
@@ -76,11 +76,11 @@ var Experience = function Experience() {
   };
 
   experience.nextStage = function() {
-    console.log("next");
+    // console.log("next");
 
-      console.log("current stage; "+currentStage);
+      // console.log("current stage; "+currentStage);
       var newStage = currentStage +1;
-      console.log("new stage; "+newStage);
+      // console.log("new stage; "+newStage);
       experience.goToStage(newStage);
     
   };
@@ -102,7 +102,7 @@ var Experience = function Experience() {
 
 	  function videoError(e) {
 	  	// do something
-	  	console.log(e);
+	  	// console.log(e);
 	  }
 
 	  video.addEventListener('click', snapshot, false);
@@ -127,7 +127,7 @@ var Experience = function Experience() {
           experience.takePhoto();
           experience.showPreview();
         }
-        console.log(i);
+        // console.log(i);
         $('.number').html(i);
         $('.number').transition({'scale':0,opacity:0},1000).promise().done(function() {
         });
@@ -142,7 +142,7 @@ var Experience = function Experience() {
       // "image/webp" works in Chrome.
       // Other browsers will fall back to image/png.
       image = canvas.toDataURL('image/png');
-      console.log(image);
+      // console.log(image);
     }
   };
 
@@ -189,7 +189,7 @@ var Experience = function Experience() {
       function (reply) {
           // store the authenticated token, which may be different from the request token (!)
           cb.setToken(reply.oauth_token, reply.oauth_token_secret);
-          console.log(reply);
+          // console.log(reply);
           // if you need to persist the login after page reload,
           // consider storing the token in a cookie or HTML5 local storage
       }
@@ -209,9 +209,9 @@ var Experience = function Experience() {
         "status": quote,
         "media[]": image
     };
-    console.log(image);
-    console.log(quote);
-    console.log(params);
+    // console.log(image);
+    // console.log(quote);
+    // console.log(params);
 
     // cb.setToken("2680975027-H7GNoL9Y4wXmluRYTPmnmCthBo3stxXr9Wq7E8h","k4bBjEbVGuYD6IXSh848kckW2WcTV46HBtWcP623jquSw");
     cb.setToken("1169329087-Tzp8DR4XpAh91wEDJTd5EdVrmoyVDi2ay4riVdc","ZTpHg33lFHsSsv2YiKW3prnnflmEdttfdmxH3mvMMY55H");
@@ -219,7 +219,7 @@ var Experience = function Experience() {
         "statuses_updateWithMedia",
     params,
       function (reply) {
-          console.log(reply);
+          // console.log(reply);
       }
     );
 
